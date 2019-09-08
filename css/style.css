@@ -1,0 +1,274 @@
+:root {
+  --font-color: rgb(65, 42, 42);
+}
+/* remove default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* header */
+header {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-auto-rows: 1;
+  background-color: aquamarine;
+  padding: .5rem;
+}
+
+header h1 {
+  grid-column: 2 / 4;
+  color: var(--font-color);
+}
+
+header ul {
+  /* grid-column: 4 / -1; */
+  justify-self: center;
+  align-self: center;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, auto);
+}
+
+header ul li {
+  list-style: none;
+}
+
+header ul li a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: var(--font-color);
+}
+
+header ul li a i {
+  margin-right: .3rem;
+}
+
+header ul li a:hover {
+  background: rgb(7, 212, 144);
+  padding: .5rem;
+  border-radius: .5rem;
+}
+
+header aside {
+  justify-self: center;
+  align-self: center;
+  /* margin-right: -7rem; */
+}
+
+header aside:hover {
+  cursor: pointer;;
+}
+
+/* side menu */
+.side-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #000;
+  opacity: 0.7;
+  height: 100vh;
+  width: 50%;
+  /* transition: 5s; */
+  z-index: 2;
+}
+
+.side-menu span i{
+  color: red;
+  font-size: 2rem;
+  background-color: none;
+  margin: .5rem 0 1rem .5rem;
+}
+
+.side-menu span i:hover {
+  cursor: pointer;
+}
+
+.side-menu ul {
+  margin-left: .5rem;
+  display: grid;
+  gap: 1rem;
+  grid-auto-flow: row;
+}
+
+.side-menu ul li {
+  list-style: none;
+}
+
+.side-menu ul li a {
+  text-decoration: none;
+  font-size: inherit;
+  color: #fff;
+}
+
+.side-menu ul li a i{
+  margin-right: 1rem;
+}
+
+/* Main */
+main {
+  margin: 2rem 1rem 0 1rem;
+}
+
+main section:nth-child(1){
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, auto);
+}
+
+/* alert div created in DOM */
+main section > div  {
+  justify-self: center;
+  width: 55rem;
+  text-align: center;
+  color: #fff;
+  margin: 1rem 0;
+  padding: .7rem;
+}
+
+.success {
+  background: green;
+}
+
+.error {
+  background: red;
+}
+
+main section form {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+form div {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-rows: repeat(4, auto);
+  justify-self: center;
+  width: 100%;
+}
+
+form div input {
+  outline: none;
+  height: 2.5rem;
+  border-radius: .4rem;
+}
+
+form div label {
+  font-size: 1.2rem;
+}
+
+form div input[type="text"]{
+  border: .1rem solid grey;
+}
+
+form div input[type="text"]:focus {
+  border: .1rem solid rgb(7, 212, 144);
+}
+
+form div input[type="submit"]{
+  border: none;
+  background: blue;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+form div input[type="submit"]:hover {
+  cursor: pointer;
+}
+
+/* main table section */
+main section:nth-child(2){
+  display: grid;
+  margin-top: 1rem;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+
+main section table {
+  justify-self: center;
+}
+
+.display-ui {
+  margin-bottom: .5rem;
+}
+
+table, thead {
+  border: .1rem solid grey;
+}
+
+thead tr th {
+  padding: .5rem;
+}
+
+thead {
+  background: rgb(7, 212, 144);
+}
+
+tbody tr:nth-child(even) {
+  background: aquamarine;
+}
+
+tbody tr td {
+  text-align: center;
+  padding: .5rem;
+  color: var(--font-color);
+}
+
+tbody tr td i {
+  color: red;
+}
+
+tbody tr td i:hover {
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  display: grid;
+  position: fixed;
+  bottom: 0;
+  background: #000;
+  width: 100%;
+  padding: 1rem;
+  color: #fff;
+  justify-content: center;
+}
+
+/* Modal */
+.modal-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  overflow: auto; 
+}
+
+/* mobile design */
+@media (min-width: 860px){
+  main section form div {
+    max-width: 40rem;
+  }
+
+  main section table {
+    width: 40rem;
+  }
+}
+@media (min-width: 769px){
+  header aside {
+    display: none;
+  }
+}
+
+@media (max-width: 768px){
+  header ul {
+    display: none;
+  }
+}
+
